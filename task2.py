@@ -1,4 +1,14 @@
-sum=0
-for i in range(1,51):
-    sum+=i
-print("The sum of numbers from 1 to 50 is: ",sum)
+inputText = input("\nEnter text to write to the file: ")
+with open("output.txt", "w") as file:
+    file.write(inputText + "\n")
+print("Data successfully written to output.txt.")
+
+additional_text = input("\nEnter additional text to append: ")
+with open("output.txt", "a") as file:
+    file.write(additional_text + "\n")
+print("Data successfully appended.")
+
+print("\nFinal content of output.txt:")
+with open("output.txt", "r") as file:
+    for line in file:
+        print(line.strip())
